@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+   <title>Trường Đại học Kinh tế TP.HCM</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" type="image/png"
+        href="https://sdh.ueh.edu.vn/ckfinder/images/BIT_logo.png">
+    
+    <style>
+        /* 1. Áp dụng gợi ý (i) cho toàn bộ section: text-align: center
+           Điều này sẽ căn giữa logo, tiêu đề, văn bản và các nút.
+        */
+        .best-shared {
+            text-align: center;
+            font-family: Arial, sans-serif; /* Giúp font chữ đẹp hơn */
+            max-width: 600px; /* Giới hạn chiều rộng để dễ nhìn */
+            margin: 0 auto; /* Căn giữa section */
+        }
+
+        /* 2. Định dạng tiêu đề */
+        .best-shared h2 {
+            font-size: 2em;
+            color: #333;
+            font-weight: normal; /* Làm chữ "Best" và "Company" bình thường */
+        }
+
+        /* Định dạng riêng chữ "Shared Hosting" màu xanh */
+        .best-shared h2 strong {
+            color: #04e4f8; /* Màu xanh dương */
+            font-weight: bold;
+        }
+
+        /* 3. Định dạng đoạn văn bản mô tả */
+        .best-shared .lead-text {
+            color: #6c757d; /* Màu xám */
+            font-size: 1.1em;
+            margin-bottom: 25px; /* Khoảng cách trước khi tới nút */
+        }
+
+        /* 4. Xóa kiểu mặc định (dấu chấm) của danh sách <ul> */
+        .best-shared .btn-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        /* 5. Áp dụng gợi ý (iii) cho <li>: display: inline-block
+           Điều này làm cho các nút xếp hàng ngang.
+        */
+        .best-shared .btn-list li {
+            display: inline-block;
+            margin: 0 5px; /* Khoảng cách giữa hai nút */
+        }
+
+        /* 6. Định dạng các thẻ <a> thành nút (theo hình ảnh) */
+        .best-shared .btn-list li a {
+            display: block; /* Giúp <a> nhận padding */
+            
+            /* Gợi ý (ii): text-decoration: none */
+            text-decoration: none;
+            
+            /* Định dạng nút đen */
+            background-color: #343a40; /* Màu nền xám đen */
+            color: white; /* Chữ trắng */
+            
+            /* Kích thước và bo góc */
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        /* Định dạng logo (đã có width 200px trong HTML) */
+        .best-shared .logo {
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <section class="best-shared">
+        <p class="logo"><img style="width:200px" src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Logo_UEH_CoB.png" alt=""></p>
+        <h2>Best <strong>Shared Hosting</strong> Company</h2>
+        <p class="lead-text">With this responsive landing page template, you can promote your all hosting, domain and email services.</p>
+        <ul class="btn-list">
+            <li><a href="./">View Plans</a></li>
+            <li><a href="./">All Features</a></li>
+        </ul>
+    </section>
+
+</body>
+</html>

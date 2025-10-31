@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+   <title>Trường Đại học Kinh tế TP.HCM</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" type="image/png"
+        href="https://upload.wikimedia.org/wikipedia/commons/7/71/Logo_UEH_xanh.png">
+</head>
+<style>
+    /* Thiết lập CSS cơ bản */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8; /* Màu nền nhẹ cho toàn trang */
+}
+
+/* Định dạng phần portfolio chính */
+.portfolio {
+    max-width: 960px; /* Giới hạn chiều rộng nội dung */
+    margin: 50px auto; /* Căn giữa và tạo khoảng cách trên dưới */
+    padding: 30px;
+    background-color: white; /* Nền trắng cho phần nội dung */
+    box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Tạo bóng đổ nhẹ */
+    text-align: center; /* Căn giữa các phần tử bên trong */
+}
+
+/* Định dạng tiêu đề MY PORTFOLIO */
+.portfolio h2 {
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 10px;
+    position: relative; /* Dùng cho đường kẻ dưới */
+    display: inline-block; /* Để đường kẻ chỉ dài bằng chữ */
+    padding-bottom: 10px; /* Khoảng cách giữa chữ và đường kẻ */
+}
+
+/* Tạo đường kẻ dưới cho tiêu đề */
+.portfolio h2::after {
+    content: '';
+    display: block;
+    width: 50px; /* Chiều dài đường kẻ */
+    height: 3px;
+    background-color: #007bff; /* Màu xanh của đường kẻ */
+    margin: 5px auto 0; /* Căn giữa đường kẻ */
+}
+
+/* Định dạng danh sách tab (bộ lọc) */
+.list-tab {
+    list-style: none;
+    padding: 0;
+    margin: 30px 0; /* Khoảng cách trên dưới */
+    display: flex; /* Dùng flexbox để xếp hàng ngang */
+    justify-content: center; /* Căn giữa các tab */
+    flex-wrap: wrap; /* Cho phép các tab xuống dòng nếu quá dài */
+}
+
+.list-tab li {
+    margin: 0 10px; /* Khoảng cách giữa các tab */
+}
+
+.list-tab li a {
+    text-decoration: none;
+    color: #666; /* Màu chữ mặc định */
+    padding: 5px 0;
+    font-weight: bold;
+    transition: color 0.3s ease; /* Hiệu ứng chuyển màu */
+}
+
+.list-tab li a:hover {
+    color: #007bff; /* Màu xanh khi di chuột */
+}
+
+/* Định dạng tab "All" (mặc định được chọn) */
+.list-tab li:first-child a {
+    color: #007bff; /* Màu xanh cho tab "All" */
+}
+
+/* Định dạng thư viện ảnh (gallery) */
+.galerry {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid; /* Dùng CSS Grid để tạo bố cục 3 cột */
+    grid-template-columns: repeat(3, 1fr); /* 3 cột bằng nhau */
+    gap: 20px; /* Khoảng cách giữa các ảnh */
+}
+
+.galerry li {
+    background-color: #aed581; /* Màu nền xanh lá cho các ô ảnh */
+    height: 250px; /* Chiều cao cố định cho ô ảnh */
+    display: flex; /* Dùng flexbox để căn giữa nội dung bên trong */
+    justify-content: center;
+    align-items: center;
+    color: rgba(255,255,255,0.8); /* Màu chữ "Học Web Chuẩn" */
+    font-size: 1.2em;
+    font-weight: bold;
+    text-align: center;
+    overflow: hidden; /* Ẩn bất kỳ nội dung nào tràn ra */
+    position: relative; /* Dùng cho việc định vị overlay */
+}
+
+.galerry li img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Đảm bảo ảnh che phủ toàn bộ khung */
+    display: block; /* Loại bỏ khoảng trắng dưới ảnh */
+    opacity: 0; /* Ẩn ảnh thực để hiển thị màu nền */
+    position: absolute; /* Để overlay có thể nằm trên */
+}
+
+/* Tạo overlay "Học Web Chuẩn" (do ảnh không có chữ đó) */
+.galerry li a::after {
+    content: "Học Web Chuẩn"; /* Chữ hiển thị */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(174, 213, 129, 0.9); /* Màu nền xanh lá mờ */
+    color: white;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-decoration: none;
+    opacity: 1; /* Hiển thị mặc định */
+    transition: opacity 0.3s ease;
+}
+
+.galerry li a:hover::after {
+    opacity: 0; /* Ẩn overlay khi di chuột nếu muốn hiển thị ảnh thật */
+}
+
+/* Điều chỉnh responsive cho màn hình nhỏ hơn */
+@media (max-width: 768px) {
+    .galerry {
+        grid-template-columns: repeat(2, 1fr); /* 2 cột trên tablet */
+    }
+}
+
+@media (max-width: 480px) {
+    .galerry {
+        grid-template-columns: 1fr; /* 1 cột trên điện thoại */
+    }
+    .list-tab li {
+        margin: 5px; /* Điều chỉnh khoảng cách tab */
+    }
+}
+</style>
+
+<body>
+<section class="portfolio">
+<h2>MY PORTFOLIO</h2>
+    <ul class="list-tab">
+        <li><a href="./">All</a></li>
+        <li><a href="./">Web App</a></li>
+        <li><a href="./">UI/UX</a></li>
+        <li><a href="./">Graphics Design</a></li>
+        <li><a href="./">Mobile App</a></li>
+        <li><a href="./">Branding</a></li>
+        <li><a href="./">Marketing</a></li>
+    </ul>
+    <ul class="galerry">
+        <li><a href="./"><img src=" https://hocwebchuan.com/exercises/images/img_350x260.png" alt=""></a></li>
+        <li><a href="./"><img src=" https://hocwebchuan.com/exercises/images/img_350x260.png" alt=""></a></li>
+        <li><a href="./"><img src=" https://hocwebchuan.com/exercises/images/img_350x260.png" alt=""></a></li>
+        <li><a href="./"><img src=" https://hocwebchuan.com/exercises/images/img_350x260.png" alt=""></a></li>
+        <li><a href="./"><img src=" https://hocwebchuan.com/exercises/images/img_350x260.png" alt=""></a></li>
+        <li><a href="./"><img src=" https://hocwebchuan.com/exercises/images/img_350x260.png" alt=""></a></li>
+        <li><a href="./"><img src="https://hocwebchuan.com/exercises/images/img_350x260.png" alt=""></a></li>
+        <li><a href="./"><img src=" https://hocwebchuan.com/exercises/images/img_350x260.png" alt=""></a></li>
+        <li><a href="./"><img src=" https://hocwebchuan.com/exercises/images/img_350x260.png" alt=""></a></li>
+    </ul>
+</section>
+</body>
+</html>

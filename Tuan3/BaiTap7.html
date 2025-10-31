@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+     <meta charset="UTF-8">
+   <title>Trường Đại học Kinh tế TP.HCM</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" type="image/png"
+        href="https://upload.wikimedia.org/wikipedia/commons/7/71/Logo_UEH_xanh.png">
+    
+    <style>
+        /* * Thiết lập cơ bản
+         * box-sizing: border-box; đảm bảo rằng padding và border
+         * KHÔNG làm tăng kích thước (width/height) của hộp.
+         */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0; /* Màu nền mờ cho đẹp mắt */
+        }
+
+        /* 1. Định dạng khung "wrapper" */
+        #wrapper {
+            width: 960px; /* Chiều rộng cố định */
+            margin: 30px auto; /* Căn giữa trang */
+            border: 2px solid black;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3); /* Tạo bóng đổ */
+            background-color: white;
+        }
+
+        /* 2. Định dạng Header */
+        header {
+            height: 100px; /* Chiều cao ví dụ */
+            border: 1px solid black;
+            padding: 10px;
+        }
+
+        /* 3. Định dạng Nav (Menu trái) */
+        nav {
+            float: left; /* Đẩy sang trái */
+            width: 30%; /* Chiếm 30% chiều rộng của wrapper */
+            height: 400px; /* Chiều cao ví dụ */
+            border: 1px solid black;
+            padding: 10px;
+        }
+
+        /* 4. Định dạng Main (Nội dung chính) */
+        main {
+            float: left; /* Đẩy sang trái, nằm cạnh nav */
+            width: 70%; /* Chiếm 70% chiều rộng còn lại */
+            height: 400px; /* Chiều cao ví dụ (bằng nav) */
+            border: 1px solid black;
+            padding: 10px;
+        }
+
+        /* 5. Định dạng Footer */
+        footer {
+            /* * clear: both;
+             * Đây là thuộc tính QUAN TRỌNG NHẤT.
+             * Nó buộc footer phải nằm BÊN DƯỚI các phần tử 
+             * đã bị "float" (là nav và main).
+             */
+            clear: both;
+            height: 80px; /* Chiều cao ví dụ */
+            border: 1px solid black;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="wrapper">
+        <header>header</header>
+        <nav>nav</nav>
+        <main>main</main>
+        <footer>footer</footer>
+    </div>
+
+</body>
+</html>
